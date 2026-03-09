@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +11,38 @@
         :root {
             --dynamic-text: 16px;
         }
+
         .dynamic-text {
             font-size: var(--dynamic-text);
         }
+
         ::-webkit-scrollbar {
             display: none;
         }
+
         .fade-in {
             animation: fadeIn 0.5s ease-in forwards;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body class="bg-gray-100 flex items-center justify-center min-h-screen font-sans">
 
-    <div id="app-container" class="relative w-full max-w-[375px] h-[812px] bg-white border-[8px] border-gray-900 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col">
-        
-        <div class="w-full h-8 bg-white flex justify-between items-center z-50 px-6 text-[15px] font-semibold text-gray-800">
+    <div id="app-container"
+        class="relative w-full max-w-[375px] h-[812px] bg-white border-[8px] border-gray-900 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col">
+
+        <div
+            class="w-full h-8 bg-white flex justify-between items-center z-50 px-6 text-[15px] font-semibold text-gray-800">
             <span>9:41</span>
             <div class="flex space-x-2 items-center">
                 <i class="fa-solid fa-signal text-sm"></i>
@@ -39,9 +52,9 @@
         </div>
 
         <div class="flex-1 overflow-y-auto pb-20 dynamic-text px-4" id="main-content">
-            
+
             <div id="tab-summary" class="tab-content block pt-4 h-full">
-                
+
                 <div id="loading-spinner" class="flex flex-col justify-center items-center h-full">
                     <i class="fa-solid fa-circle-notch fa-spin text-4xl text-blue-500 mb-4"></i>
                     <p class="text-gray-500 font-medium">Retrieving data...</p>
@@ -49,11 +62,14 @@
 
                 <div id="summary-content" class="hidden opacity-0">
                     <div class="flex justify-between items-center mb-6">
-                        <button onclick="toggleSettings()" class="text-gray-600 hover:text-blue-500 text-2xl w-10 text-left">
+                        <button onclick="toggleSettings()"
+                            class="text-gray-600 hover:text-blue-500 text-2xl w-10 text-left">
                             <i class="fa-solid fa-gear"></i>
                         </button>
                         <h1 class="text-2xl font-bold text-center flex-1">Summary</h1>
-                        <button onclick="cycleLayout()" class="flex flex-col items-center text-gray-500 hover:text-blue-500 w-10" title="Change Layout">
+                        <button onclick="cycleLayout()"
+                            class="flex flex-col items-center text-gray-500 hover:text-blue-500 w-10"
+                            title="Change Layout">
                             <i class="fa-solid fa-shuffle text-xl"></i>
                             <span class="text-[10px] font-bold mt-1">Layout</span>
                         </button>
@@ -69,25 +85,29 @@
                                 </div>
                                 <div class="text-right">
                                     <p class="font-semibold text-gray-700">Calories Burned</p>
-                                    <p class="text-xl font-bold text-green-600">500<span class="text-sm text-gray-500">cal/500</span></p>
+                                    <p class="text-xl font-bold text-green-600">500<span
+                                            class="text-sm text-gray-500">cal/500</span></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="flex space-x-4 mb-4">
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex-1 flex flex-col items-center cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex-1 flex flex-col items-center cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-shoe-prints text-blue-500 text-xl mb-1"></i>
                                 <p class="font-bold text-lg text-gray-800">10,245</p>
                                 <p class="text-xs text-gray-500 font-medium">Steps</p>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex-1 flex flex-col items-center cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex-1 flex flex-col items-center cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-location-dot text-red-500 text-xl mb-1"></i>
                                 <p class="font-bold text-lg text-gray-800">2.4</p>
                                 <p class="text-xs text-gray-500 font-medium">Miles</p>
                             </div>
                         </div>
 
-                        <div class="bg-white rounded-2xl shadow-md border p-4 mb-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+                        <div
+                            class="bg-white rounded-2xl shadow-md border p-4 mb-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
                             <div class="flex items-center space-x-3">
                                 <i class="fa-solid fa-heart-pulse text-rose-500 text-xl"></i>
                                 <p class="font-semibold text-gray-800 text-lg">Heart Rate Avg</p>
@@ -99,23 +119,33 @@
                     <div id="layout-2" class="hidden">
                         <div class="bg-white rounded-2xl shadow-md border overflow-hidden mb-4">
                             <div class="flex justify-between items-center p-4 border-b hover:bg-gray-50 cursor-pointer">
-                                <div class="flex items-center space-x-3"><i class="fa-solid fa-fire text-orange-500 w-5"></i><span class="font-semibold text-gray-700">Calories</span></div>
+                                <div class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-fire text-orange-500 w-5"></i><span
+                                        class="font-semibold text-gray-700">Calories</span></div>
                                 <span class="font-bold text-gray-800">500 / 500</span>
                             </div>
                             <div class="flex justify-between items-center p-4 border-b hover:bg-gray-50 cursor-pointer">
-                                <div class="flex items-center space-x-3"><i class="fa-solid fa-shoe-prints text-blue-500 w-5"></i><span class="font-semibold text-gray-700">Steps</span></div>
+                                <div class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-shoe-prints text-blue-500 w-5"></i><span
+                                        class="font-semibold text-gray-700">Steps</span></div>
                                 <span class="font-bold text-gray-800">10,245</span>
                             </div>
                             <div class="flex justify-between items-center p-4 border-b hover:bg-gray-50 cursor-pointer">
-                                <div class="flex items-center space-x-3"><i class="fa-solid fa-location-dot text-red-500 w-5"></i><span class="font-semibold text-gray-700">Miles</span></div>
+                                <div class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-location-dot text-red-500 w-5"></i><span
+                                        class="font-semibold text-gray-700">Miles</span></div>
                                 <span class="font-bold text-gray-800">2.4 mi</span>
                             </div>
                             <div class="flex justify-between items-center p-4 border-b hover:bg-gray-50 cursor-pointer">
-                                <div class="flex items-center space-x-3"><i class="fa-solid fa-heart-pulse text-rose-500 w-5"></i><span class="font-semibold text-gray-700">Heart Rate</span></div>
+                                <div class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-heart-pulse text-rose-500 w-5"></i><span
+                                        class="font-semibold text-gray-700">Heart Rate</span></div>
                                 <span class="font-bold text-gray-800">112 bpm</span>
                             </div>
                             <div class="flex justify-between items-center p-4 hover:bg-gray-50 cursor-pointer">
-                                <div class="flex items-center space-x-3"><i class="fa-solid fa-moon text-indigo-500 w-5"></i><span class="font-semibold text-gray-700">Sleep</span></div>
+                                <div class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-moon text-indigo-500 w-5"></i><span
+                                        class="font-semibold text-gray-700">Sleep</span></div>
                                 <span class="font-bold text-gray-800">7h 20m</span>
                             </div>
                         </div>
@@ -123,32 +153,38 @@
 
                     <div id="layout-3" class="hidden">
                         <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-fire text-orange-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">500</span>
                                 <span class="text-xs font-semibold text-gray-500">Calories</span>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-shoe-prints text-blue-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">10,245</span>
                                 <span class="text-xs font-semibold text-gray-500">Steps</span>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-location-dot text-red-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">2.4</span>
                                 <span class="text-xs font-semibold text-gray-500">Miles</span>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-stopwatch text-green-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">45m</span>
                                 <span class="text-xs font-semibold text-gray-500">Active Time</span>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-heart-pulse text-rose-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">112</span>
                                 <span class="text-xs font-semibold text-gray-500">Avg BPM</span>
                             </div>
-                            <div class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
+                            <div
+                                class="bg-white rounded-2xl shadow-md border p-4 flex flex-col text-left cursor-pointer hover:bg-gray-50">
                                 <i class="fa-solid fa-moon text-indigo-500 text-2xl mb-2"></i>
                                 <span class="font-bold text-xl text-gray-800">7h 20m</span>
                                 <span class="text-xs font-semibold text-gray-500">Sleep</span>
@@ -156,7 +192,8 @@
                         </div>
                     </div>
 
-                    <button onclick="toggleManualModal()" class="w-full bg-blue-500 text-white rounded-2xl py-3 mt-2 font-semibold shadow-md hover:bg-blue-600 transition-colors">
+                    <button onclick="toggleManualModal()"
+                        class="w-full bg-blue-500 text-white rounded-2xl py-3 mt-2 font-semibold shadow-md hover:bg-blue-600 transition-colors">
                         Input Manual Data
                     </button>
                 </div>
@@ -166,7 +203,8 @@
                 <h1 class="text-2xl font-bold text-center mb-6 mt-2">App Hub</h1>
 
                 <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 mb-6 text-center">
-                    <p class="text-indigo-800 font-medium text-sm">View or add data from your external fitness apps here.</p>
+                    <p class="text-indigo-800 font-medium text-sm">View or add data from your external fitness apps
+                        here.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-md border p-5 mb-4">
@@ -178,21 +216,28 @@
                                 <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Run Data</p>
                             </div>
                         </div>
-                        <span id="strava-status" class="text-[10px] font-bold text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">Not Found</span>
-                    </div>
-                    
-                    <div id="strava-data" class="hidden mt-5 pt-4 border-t border-gray-100 space-y-2 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-500">Last Run:</span><span class="font-semibold text-gray-800">3.2 miles</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">Duration:</span><span class="font-semibold text-gray-800">28 mins 45 sec</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">Avg Pace:</span><span class="font-semibold text-gray-800">8:59 /mi</span></div>
+                        <span id="strava-status"
+                            class="text-[10px] font-bold text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">Not
+                            Found</span>
                     </div>
 
-                    <button id="retry-sync-btn" onclick="retrySync()" class="w-full mt-5 bg-orange-50 text-orange-600 border border-orange-200 rounded-xl py-2.5 font-bold hover:bg-orange-100 transition-colors">
+                    <div id="strava-data" class="hidden mt-5 pt-4 border-t border-gray-100 space-y-2 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-500">Last Run:</span><span
+                                class="font-semibold text-gray-800">3.2 miles</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Duration:</span><span
+                                class="font-semibold text-gray-800">28 mins 45 sec</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Avg Pace:</span><span
+                                class="font-semibold text-gray-800">8:59 /mi</span></div>
+                    </div>
+
+                    <button id="retry-sync-btn" onclick="retrySync()"
+                        class="w-full mt-5 bg-orange-50 text-orange-600 border border-orange-200 rounded-xl py-2.5 font-bold hover:bg-orange-100 transition-colors">
                         Retry Sync
                     </button>
                 </div>
 
-                <button class="w-full bg-indigo-500 text-white rounded-2xl py-3.5 font-semibold shadow-md hover:bg-indigo-600 transition-colors flex items-center justify-center space-x-2">
+                <button
+                    class="w-full bg-indigo-500 text-white rounded-2xl py-3.5 font-semibold shadow-md hover:bg-indigo-600 transition-colors flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-plus"></i>
                     <span>Add App</span>
                 </button>
@@ -201,7 +246,8 @@
             <div id="tab-workouts" class="tab-content hidden pt-4">
                 <div class="relative mb-6">
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-gray-400"></i>
-                    <input type="text" class="w-full bg-gray-100 rounded-full py-3 pl-12 pr-12 outline-none" placeholder="Find new workouts">
+                    <input type="text" class="w-full bg-gray-100 rounded-full py-3 pl-12 pr-12 outline-none"
+                        placeholder="Find new workouts">
                     <i class="fa-solid fa-sliders absolute right-4 top-3.5 text-gray-400"></i>
                 </div>
 
@@ -209,24 +255,30 @@
 
                 <div class="space-y-4">
                     <div class="flex justify-between items-center bg-white rounded-2xl shadow-md border p-4">
-                        <span class="font-semibold text-lg text-gray-800">Cardio</span>
+                        <span class="font-semibold text-lg text-gray-800">Cardio: 5K training</span>
                         <div class="flex items-center space-x-4">
-                            <button class="text-blue-500 font-semibold hover:text-blue-700">View</button>
-                            <button class="text-red-400 hover:text-red-600" title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
+                            <button onclick="viewWorkout('5k')"
+                                class="text-blue-500 font-semibold hover:text-blue-700">View</button>
+                            <button onclick="removeWorkout(this)" class="text-red-400 hover:text-red-600"
+                                title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
                         </div>
                     </div>
                     <div class="flex justify-between items-center bg-white rounded-2xl shadow-md border p-4">
                         <span class="font-semibold text-lg text-gray-800">Gym: Push</span>
                         <div class="flex items-center space-x-4">
-                            <button class="text-blue-500 font-semibold hover:text-blue-700">View</button>
-                            <button class="text-red-400 hover:text-red-600" title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
+                            <button onclick="alert('Not implemented.')"
+                                class="text-blue-500 font-semibold hover:text-blue-700">View</button>
+                            <button onclick="removeWorkout(this)" class="text-red-400 hover:text-red-600"
+                                title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
                         </div>
                     </div>
                     <div class="flex justify-between items-center bg-white rounded-2xl shadow-md border p-4">
                         <span class="font-semibold text-lg text-gray-800">Yoga</span>
                         <div class="flex items-center space-x-4">
-                            <button class="text-blue-500 font-semibold hover:text-blue-700">View</button>
-                            <button class="text-red-400 hover:text-red-600" title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
+                            <button onclick="alert('Not implemented.')"
+                                class="text-blue-500 font-semibold hover:text-blue-700">View</button>
+                            <button onclick="removeWorkout(this)" class="text-red-400 hover:text-red-600"
+                                title="Remove"><i class="fa-solid fa-xmark text-lg"></i></button>
                         </div>
                     </div>
                 </div>
@@ -249,7 +301,7 @@
                                 <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between text-sm font-semibold text-gray-600 mb-1">
                                 <span>Calories Burned</span>
@@ -262,17 +314,20 @@
                     </div>
                 </div>
 
-                <button class="w-full bg-green-500 text-white rounded-2xl py-4 font-semibold shadow-md hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                <button onclick="alert('Not implemented.')"
+                    class="w-full bg-green-500 text-white rounded-2xl py-4 font-semibold shadow-md hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-share-nodes"></i>
                     <span>Share Progress</span>
                 </button>
-                <button class="w-full bg-white text-gray-700 border border-gray-200 rounded-2xl py-4 mt-3 font-semibold shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center space-x-2">
+                <button onclick="alert('Not implemented.')"
+                    class="w-full bg-white text-gray-700 border border-gray-200 rounded-2xl py-4 mt-3 font-semibold shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-bullseye"></i>
                     <span>Update Goals</span>
                 </button>
             </div>
 
-            <div id="manual-data-modal" class="hidden absolute top-8 left-0 right-0 bottom-20 bg-white z-20 px-4 pt-4 overflow-y-auto">
+            <div id="manual-data-modal"
+                class="hidden absolute top-8 left-0 right-0 bottom-20 bg-white z-20 px-4 pt-4 overflow-y-auto">
                 <div class="flex items-center mb-8">
                     <button onclick="toggleManualModal()" class="text-2xl text-gray-600 hover:text-gray-900">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -281,10 +336,12 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-sm border p-6 mb-6">
-                    <p class="text-sm text-gray-500 mb-6 text-center">Add external dummy data to your daily summary manually.</p>
-                    
+                    <p class="text-sm text-gray-500 mb-6 text-center">Add external dummy data to your daily summary
+                        manually.</p>
+
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Data Type</label>
-                    <select class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 outline-none mb-4 text-gray-700 font-medium">
+                    <select
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 outline-none mb-4 text-gray-700 font-medium">
                         <option>Calories Burned</option>
                         <option>Steps Taken</option>
                         <option>Miles Traveled</option>
@@ -293,15 +350,73 @@
                     </select>
 
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Value</label>
-                    <input type="number" class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 outline-none mb-8 text-gray-700" placeholder="Enter amount...">
+                    <input type="number"
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 outline-none mb-8 text-gray-700"
+                        placeholder="Enter amount...">
 
-                    <button onclick="submitManualData()" class="w-full bg-blue-500 text-white rounded-xl py-3.5 font-semibold shadow-sm hover:bg-blue-600 transition-colors">
+                    <button onclick="submitManualData()"
+                        class="w-full bg-blue-500 text-white rounded-xl py-3.5 font-semibold shadow-sm hover:bg-blue-600 transition-colors">
                         Save Data
                     </button>
                 </div>
             </div>
 
-            <div id="settings-modal" class="hidden absolute top-8 left-0 right-0 bottom-20 bg-white z-20 px-4 pt-4 overflow-y-auto">
+            <div id="workout-details-modal"
+                class="hidden absolute top-0 left-0 right-0 bottom-0 bg-white z-30 flex flex-col transition-transform duration-300">
+                <div class="flex items-center p-6 border-b bg-white mt-8">
+                    <button onclick="closeWorkout()" class="text-2xl text-gray-600 hover:text-gray-900 w-8">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h1 id="workout-title" class="text-xl font-bold flex-1 text-center pr-8 text-gray-800">Cardio: 5K
+                        training</h1>
+                </div>
+
+                <div class="flex-1 overflow-y-auto pb-20 p-4 bg-gray-50">
+                    <div
+                        class="w-full bg-gray-200 rounded-3xl overflow-hidden mb-6 aspect-video relative shadow-lg border-4 border-white">
+                        <iframe id="workout-video" class="w-full h-full absolute top-0 left-0"
+                            src="https://www.youtube.com/embed/ToeioB7tbbQ?si=C81WF6i_HqoHnIzR"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="mb-6 bg-white p-5 rounded-3xl shadow-sm border border-gray-100">
+                        <h2 class="text-lg font-bold text-gray-800 mb-2">Description</h2>
+                        <p id="workout-desc" class="text-sm text-gray-600 leading-relaxed font-medium">Get ready for
+                            your 5K with this comprehensive training routine. Improve your stamina and speed with
+                            targeted interval runs and steady-state cardio.</p>
+                    </div>
+
+                    <div
+                        class="bg-indigo-50 rounded-3xl p-5 mb-8 border border-indigo-100 flex items-center justify-between shadow-sm">
+                        <div>
+                            <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider mb-1">Goal Metric
+                            </p>
+                            <p class="text-indigo-900 font-bold text-base"><i
+                                    class="fa-solid fa-heart-pulse mr-2 text-rose-500"></i> Zone HR Minutes</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-black text-indigo-600">0<span
+                                    class="text-sm text-indigo-400">/30</span></p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mt-auto mb-4">
+                        <button onclick="alert('Not implemented.')"
+                            class="w-full bg-blue-500 text-white rounded-2xl py-4 font-bold shadow-md hover:bg-blue-600 transition-colors text-sm">
+                            Update Metric
+                        </button>
+                        <button onclick="removeWorkoutFromDetail()"
+                            class="w-full bg-white text-red-500 border-2 border-red-100 rounded-2xl py-4 font-bold hover:bg-red-50 transition-colors text-sm">
+                            Remove Workout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings-modal"
+                class="hidden absolute top-8 left-0 right-0 bottom-20 bg-white z-20 px-4 pt-4 overflow-y-auto">
                 <div class="flex items-center mb-8">
                     <button onclick="toggleSettings()" class="text-2xl text-gray-600 hover:text-gray-900">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -311,7 +426,8 @@
 
                 <div class="bg-white rounded-2xl shadow-sm border p-6 mb-6">
                     <p class="text-center font-semibold mb-4 text-gray-700">Change text size</p>
-                    <input type="range" id="text-slider" min="12" max="24" value="16" class="w-full accent-blue-500" oninput="updateTextSize(this.value)">
+                    <input type="range" id="text-slider" min="12" max="24" value="16" class="w-full accent-blue-500"
+                        oninput="updateTextSize(this.value)">
                     <div class="flex justify-between text-xs text-gray-400 mt-2">
                         <span>A</span>
                         <span class="text-lg">A</span>
@@ -334,7 +450,8 @@
                             <span class="text-xs font-medium">Smart Ring</span>
                         </div>
                     </div>
-                    <button class="w-full mt-6 bg-blue-500 text-white rounded-xl py-3 font-semibold shadow-sm hover:bg-blue-600 transition-colors">
+                    <button
+                        class="w-full mt-6 bg-blue-500 text-white rounded-xl py-3 font-semibold shadow-sm hover:bg-blue-600 transition-colors">
                         Sync Connected Devices
                     </button>
                 </div>
@@ -342,24 +459,31 @@
 
         </div>
 
-        <div class="h-20 bg-white border-t flex justify-around items-center pb-4 pt-2 absolute bottom-0 w-full z-30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-            <button onclick="switchTab('summary')" class="nav-btn text-blue-500 flex flex-col items-center w-16" data-target="summary">
+        <div
+            class="h-20 bg-white border-t flex justify-around items-center pb-4 pt-2 absolute bottom-0 w-full z-30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+            <button onclick="switchTab('summary')" class="nav-btn text-blue-500 flex flex-col items-center w-16"
+                data-target="summary">
                 <i class="fa-solid fa-chart-pie text-xl mb-1"></i>
                 <span class="text-[10px] font-medium">Home</span>
             </button>
-            <button onclick="switchTab('hub')" class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16" data-target="hub">
+            <button onclick="switchTab('hub')"
+                class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16" data-target="hub">
                 <i class="fa-solid fa-cubes text-xl mb-1"></i>
                 <span class="text-[10px] font-medium">Hub</span>
             </button>
-            <button onclick="switchTab('workouts')" class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16" data-target="workouts">
+            <button onclick="switchTab('workouts')"
+                class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16"
+                data-target="workouts">
                 <i class="fa-solid fa-book-open text-xl mb-1"></i>
                 <span class="text-[10px] font-medium">Workouts</span>
             </button>
-            <button onclick="switchTab('sharing')" class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16" data-target="sharing">
+            <button onclick="switchTab('sharing')"
+                class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16" data-target="sharing">
                 <i class="fa-regular fa-user text-xl mb-1"></i>
                 <span class="text-[10px] font-medium">Sharing</span>
             </button>
-            <button onclick="alert('In context help would pop up here relevant to the current screen.')" class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16">
+            <button onclick="alert('Not implemented.')"
+                class="nav-btn text-gray-400 hover:text-blue-500 flex flex-col items-center w-16">
                 <i class="fa-regular fa-circle-question text-xl mb-1"></i>
                 <span class="text-[10px] font-medium">Help</span>
             </button>
@@ -382,7 +506,7 @@
             // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('block', 'h-full'));
-            
+
             // Show target tab
             const target = document.getElementById('tab-' + tabId);
             target.classList.remove('hidden');
@@ -397,7 +521,7 @@
                 btn.classList.add('text-gray-400');
             });
             const activeBtn = document.querySelector(`.nav-btn[data-target="${tabId}"]`);
-            if(activeBtn) {
+            if (activeBtn) {
                 activeBtn.classList.remove('text-gray-400');
                 activeBtn.classList.add('text-blue-500');
             }
@@ -405,6 +529,9 @@
             // Ensure modals are closed when switching tabs
             document.getElementById('settings-modal').classList.add('hidden');
             document.getElementById('manual-data-modal').classList.add('hidden');
+            if (typeof closeWorkout === 'function') {
+                closeWorkout();
+            }
         }
 
         function toggleSettings() {
@@ -416,8 +543,73 @@
         }
 
         function submitManualData() {
-            alert("External data successfully saved!");
+            const typeSelect = document.querySelector('#manual-data-modal select');
+            const valueInput = document.querySelector('#manual-data-modal input');
+            const value = valueInput.value;
+            if (!value) return alert("Please enter a value.");
+
+            const type = typeSelect.value;
+
+            // Simple DOM update for prototype
+            const allElements = document.querySelectorAll('p, span');
+            allElements.forEach(el => {
+                if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+                    if (type === 'Calories Burned' && el.textContent.includes('500') && !el.textContent.includes('cal')) {
+                        el.textContent = el.textContent.replace('500', value);
+                    } else if (type === 'Steps Taken' && el.textContent.includes('10,245')) {
+                        el.textContent = el.textContent.replace('10,245', value);
+                    } else if (type === 'Miles Traveled' && el.textContent.includes('2.4')) {
+                        el.textContent = el.textContent.replace('2.4', value);
+                    }
+                }
+            });
+
+            document.querySelectorAll('.font-bold').forEach(el => {
+                if (type === 'Calories Burned' && el.innerHTML.includes('500<span')) {
+                    el.innerHTML = el.innerHTML.replace('500<span', value + '<span');
+                }
+            });
+            document.querySelectorAll('span.font-bold').forEach(el => {
+                if (type === 'Calories Burned' && el.textContent === '500 / 500') {
+                    el.textContent = `${value} / 500`;
+                }
+            });
+
+            alert(`External data successfully saved for ${type}!`);
+            valueInput.value = '';
             toggleManualModal();
+        }
+
+        function viewWorkout(type) {
+            document.getElementById('workout-details-modal').classList.remove('hidden');
+            if (type === '5k') {
+                document.getElementById('workout-title').textContent = 'Cardio: 5K training';
+                document.getElementById('workout-desc').textContent = 'Get ready for your 5k with this comprehensive training routine. Improve your stamina and speed with targeted interval runs and steady-state cardio.';
+            }
+        }
+
+        function closeWorkout() {
+            document.getElementById('workout-details-modal').classList.add('hidden');
+            // reset iframe to stop video
+            const iframe = document.getElementById('workout-video');
+            const src = iframe.src;
+            iframe.src = src;
+        }
+
+        function removeWorkout(btn) {
+            if (confirm("Are you sure you want to remove this workout?")) {
+                btn.closest('.flex.justify-between').remove();
+            }
+        }
+
+        function removeWorkoutFromDetail() {
+            if (confirm("Are you sure you want to remove this workout?")) {
+                closeWorkout();
+                const cardioEl = Array.from(document.querySelectorAll('.font-semibold.text-lg')).find(el => el.textContent.includes('Cardio'));
+                if (cardioEl) {
+                    cardioEl.closest('.flex.justify-between').remove();
+                }
+            }
         }
 
         function updateTextSize(value) {
@@ -429,9 +621,9 @@
         function cycleLayout() {
             document.getElementById(`layout-${currentLayout}`).classList.add('hidden');
             document.getElementById(`layout-${currentLayout}`).classList.remove('block');
-            
+
             currentLayout = currentLayout >= 3 ? 1 : currentLayout + 1;
-            
+
             document.getElementById(`layout-${currentLayout}`).classList.remove('hidden');
             document.getElementById(`layout-${currentLayout}`).classList.add('block');
         }
@@ -441,14 +633,14 @@
             const btn = document.getElementById('retry-sync-btn');
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Syncing...';
             btn.classList.replace('text-orange-600', 'text-gray-500');
-            
+
             setTimeout(() => {
                 // Change status badge
                 const statusBadge = document.getElementById('strava-status');
                 statusBadge.textContent = 'Synced';
                 statusBadge.classList.replace('text-gray-500', 'text-green-600');
                 statusBadge.classList.replace('bg-gray-100', 'bg-green-100');
-                
+
                 // Show data and hide button
                 document.getElementById('strava-data').classList.remove('hidden');
                 document.getElementById('strava-data').classList.add('fade-in');
@@ -457,4 +649,5 @@
         }
     </script>
 </body>
+
 </html>
